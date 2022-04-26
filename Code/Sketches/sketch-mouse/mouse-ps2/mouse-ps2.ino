@@ -54,24 +54,16 @@ void loop()
  char clickl = mstat & (B00000001);
  char clickr = (mstat>>1) & (B00000001);
 
- if(clickl){
-  somax += mx;
-  somay += my;
-  nAquisicao++;
- }else{
-  Serial.print("soma x:\t");
-  Serial.print(somax,DEC);
-  Serial.print("\tsoma y:\t");
-  Serial.print(somay,DEC); 
-  Serial.print("\taquiosicao:\t");
-  Serial.print(nAquisicao,DEC); 
-  Serial.println();
- }
+ Serial.print("mstat:\t");
+ Serial.print(mstat,DEC);
+ Serial.print("mx:\t");
+ Serial.print(mx,DEC);
+ Serial.print("\tmy:\t");
+ Serial.print(my,DEC); 
+ Serial.print("\tclickl:\t");
+ Serial.print(clickl); 
+ Serial.print("\tclickr:\t");
+ Serial.print(clickr); 
+ Serial.println();
 
- if(clickr) {
-  somax = 0;
-  somay = 0;
-  nAquisicao = 0;
-  Serial.println("zerou a soma");
- }
 }
